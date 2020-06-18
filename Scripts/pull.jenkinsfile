@@ -23,6 +23,7 @@ pipeline {
                     ]
                 )
             }
+        }
         stage('Call Script Job') {
             steps {
                     build job: 'script', parameters: []
@@ -33,8 +34,7 @@ pipeline {
                     build job: 'print-job-num', parameters: [
                         string(name: 'JOB_NUM', value: env.JOB_NUMBER)
                         ]
-              }
-           }           
+            }           
         }
     }
 }
