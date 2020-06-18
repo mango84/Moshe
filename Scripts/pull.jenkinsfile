@@ -1,7 +1,7 @@
 pipeline {
     agent { node {label 'master'}  }
     stages {
-        stage('Test') {
+        stage('Pull') {
             steps {
                 checkout(
                     [  
