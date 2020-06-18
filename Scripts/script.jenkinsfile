@@ -14,7 +14,8 @@ pipeline {
                                     "Script succeeded, job name is:`n`n$ENV:JOB_NAME"
                                 }
                                 }
-                                For ($i=0; $i -eq 3; $i++) {
+
+                                For ($i=0; $i -le 3; $i++) {
                                 Get-JobName -CountIndex $i
                                 }
                            '''
