@@ -30,7 +30,9 @@ pipeline {
            }
         stage('Print Job  Number of First Job') {
             steps {
-                    build job: 'print-job-num', parameters: [string(name: 'JOB_NUM', value: env.JOB_NUMBER")]
+                    build job: 'print-job-num', parameters: [
+                        string(name: 'JOB_NUM', value: env.JOB_NUMBER)
+                        ]
               }
            }           
         }
