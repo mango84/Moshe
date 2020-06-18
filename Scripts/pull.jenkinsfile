@@ -23,6 +23,11 @@ pipeline {
                     ]
                 )
             }
+        stage('Call Script Job') {
+            steps {
+                    build job: 'script', parameters: []
+              }
+           }
         }
     }
 }
