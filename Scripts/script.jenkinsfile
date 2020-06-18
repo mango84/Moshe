@@ -15,7 +15,7 @@ pipeline {
                                 }
                                 }
 
-                                For ($i=0; $i -le 3; $i++) {
+                                For ($i=1; $i -le 3; $i++) {
                                 Get-JobName -CountIndex $i
                                 }
                            '''
