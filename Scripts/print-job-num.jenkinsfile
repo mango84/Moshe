@@ -8,7 +8,7 @@ pipeline {
         stage('Print Job Num') {
             steps {
                 script {
-                    echo params.JOB_NUM
+                    echo env.JOB_NUM
                 }
             }
         }
