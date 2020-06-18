@@ -1,0 +1,16 @@
+pipeline {
+    agent { label 'master' }
+    parameters {
+        string(name: 'JOB_NUM', defaultValue: '', description: '')
+    }
+    
+    stages {
+        stage('Print Job Num') {
+            steps {
+                script {
+                    echo params.JOB_NUM
+                }
+            }
+        }
+    }
+}
