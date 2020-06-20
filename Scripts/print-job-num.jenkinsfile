@@ -1,0 +1,17 @@
+pipeline {
+    agent { label 'master' }
+    parameters {
+        string(name: 'JOB_NUM', defaultValue: '', description: '')
+    }
+    
+    stages {
+        stage('Print Job Num') {
+            steps {
+                powershell '''
+                           Write-Host 
+                           "Job1 number is: $ENV:JOB_NUM"
+                           '''   
+            }
+        }
+    }
+}
