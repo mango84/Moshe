@@ -8,7 +8,7 @@ pipeline {
         stage('Print Job Num') {
             steps {
                 script {
-                    echo env.JOB_NUM
+                    echo Job Number of job1 is env.JOB_NUM
                 }
             }
         }
