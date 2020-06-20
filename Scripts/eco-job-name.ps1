@@ -1,2 +1,0 @@
-Write-Host "JOB-NAME: $ENV:JOB_NAME"
-write-host "BUILD-NUMBER: $ENV:BUILD_NUMBER"
