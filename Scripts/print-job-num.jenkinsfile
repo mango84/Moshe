@@ -7,9 +7,10 @@ pipeline {
     stages {
         stage('Print Job Num') {
             steps {
-                script {
-                    echo env.JOB_NUM
-                }
+                powershell '''
+                           Write-Host 
+                           "Job Number of Job1 Is: $ENV:JOB_NUM"
+                           '''   
             }
         }
     }

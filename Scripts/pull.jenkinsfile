@@ -1,7 +1,7 @@
 pipeline {
     agent { node {label 'master'}  }
     stages {
-        stage('Pull') {
+        stage('Pull - Job1') {
             steps {
                 checkout(
                     [  
@@ -24,12 +24,12 @@ pipeline {
                 )
             }
         }
-        stage('Call job2') {
+        stage('Call script - Job2') {
             steps {
                     build job: 'job2', parameters: []
               }
            }
-        stage('Print Job Number of First Job') {
+        stage('Print Job Number of First Job - Job3') {
             steps {
                     build job: 'job3', parameters: [
                         string(name: 'JOB_NUM', value: env.BUILD_NUMBER)
