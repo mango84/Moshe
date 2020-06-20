@@ -6,7 +6,7 @@ pipeline {
                 checkout(
                     [  
                         $class: 'GitSCM', 
-                        branches: [[name: "origin/test"]], 
+                        branches: [[name: "origin/master"]], 
                         doGenerateSubmoduleConfigurations: false, 
                         extensions: [
                             [$class: 'CleanBeforeCheckout'],
