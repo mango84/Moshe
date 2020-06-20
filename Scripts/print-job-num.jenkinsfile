@@ -9,7 +9,7 @@ pipeline {
             steps {
                 powershell '''
                            Write-Host 
-                           "Job Number of Job1 Is: $ENV:JOB_NUM"
+                           "Job1 number is: $ENV:JOB_NUM"
                            '''   
             }
         }
