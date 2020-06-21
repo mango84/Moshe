@@ -7,7 +7,7 @@ pipeline {
                               if ($R.GetType().Name -eq "Double") {
                               throw "Script Failed"
                               } else {
-                                "Script Succeeded"
+                                "job name is: $ENV:JOB_NAME"
                               }
                            '''
             }
