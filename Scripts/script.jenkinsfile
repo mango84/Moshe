@@ -3,21 +3,12 @@ pipeline {
     stages {
         stage('Run Script') {
             steps {
-                powershell '''function Get-JobName($CountIndex) {
-                              $R = $CountIndex / 3
+                powershell '''$R = $ENV:BUILD_NUMBER / 3
                               if ($R.GetType().Name -eq "Double") {
-                                    "`nScript exec: $CountIndex`n"
-                                    "Script Failed"
-                                    Start-Sleep -s 3
-                                } else {
-                                    "`nScript exec: $CountIndex`n"
-                                    "Script succeeded, job name is:`n`n$ENV:JOB_NAME"
-                                }
-                                }
-
-                                For ($i=1; $i -le 3; $i++) {
-                                Get-JobName -CountIndex $i
-                                }
+                              throw "Script Failed"
+                              } else {
+                                "Script Succeeded"
+                              }
                            '''
             }
         }
