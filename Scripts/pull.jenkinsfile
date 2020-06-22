@@ -27,7 +27,6 @@ pipeline {
         }
         stage('Call script - Job2') {
             steps {
-                retry(3)
                     build job: 'job2', parameters: [
                         string(name: 'WORK_DIR', value: env.WORKSPACE)
                     ]
