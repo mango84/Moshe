@@ -27,18 +27,18 @@ pipeline {
         }
         stage('Call script - Job2') {
             steps {
+                retry(3){                
                     build job: 'job2', parameters: [
                         string(name: 'WORK_DIR', value: env.WORKSPACE)
                     ]
+                 }
               }
            }
         stage('Print Job Number of First Job - Job3') {
             steps {
-                retry(3){
                     build job: 'job3', parameters: [
                         string(name: 'JOB_NUM', value: env.BUILD_NUMBER)
                         ]
-                }
             }           
         }
     }
