@@ -6,11 +6,9 @@ pipeline {
     stages {
         stage('Run Script') {
             steps {
-                retry(3) {
                 powershell '''
                 cd $ENV:WORK_DIR\\Scripts
                 .\\script.ps1'''
-                }
             }
         }
     }
