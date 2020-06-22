@@ -27,7 +27,9 @@ pipeline {
         }
         stage('Call script - Job2') {
             steps {
-                    build job: 'job2', parameters: []
+                    build job: 'job2', parameters: [
+                        string(name: 'JOB_NAME', value: env.JOB_NAME)
+                    ]
               }
            }
         stage('Print Job Number of First Job - Job3') {
