@@ -1,9 +1,12 @@
 pipeline {
     agent { node {label 'master'}  }
+    parameters {
+        string(name: 'WORK_DIR', defaultValue: '', description: '')
+    }
     stages {
         stage('Run Script') {
             steps {
-                powershell 'C:\\Jenkins\\Jenkins\\workspace\\job1\\Scripts\\script.ps1'
+                powershell '$ENV:WORK_DIR\\Scripts\\script.ps1'
             }
         }
     }
