@@ -1,6 +1,5 @@
 pipeline {
     agent { node {label 'master'}  }
-    options { retry(3) }
     stages {
         stage('Run Script') {
             steps {
