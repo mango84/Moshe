@@ -1,6 +1,6 @@
 pipeline {
     agent { node {label 'master'}  }
-    options { retry(3) }
+    // options { retry(3) }
     stages {
         stage('Pull - Job1') {
             steps {
